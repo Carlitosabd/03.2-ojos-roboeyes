@@ -86,5 +86,18 @@ const unsigned char logo_bitmap[] PROGMEM = {
 
 // TODO 2.1: Usa estos datos (LOGO_WIDTH × LOGO_HEIGHT y logo_bitmap) para pintar el logo de arranque en el panel.
 // Pregunta Guía: ¿Cuántos bytes ocupa el logo y por qué ese número sale de 128 × 64 / 8?
-
+/*
+ * RESPUESTA A LA PREGUNTA GUÍA:
+ * El logo ocupa exactamente 1024 bytes en la memoria de programa (PROGMEM).
+ * 
+ * ¿Por qué sale ese número?
+ * La pantalla OLED tiene una resolución monocromática de 128 píxeles de ancho por 64 píxeles de alto, 
+ * lo que da un total de 8,192 píxeles individuales en la matriz. Como cada píxel es monocromático 
+ * (solo requiere 1 bit de información para saber si está encendido/blanco o apagado/negro), 
+ * el cálculo total de bits es de 128 × 64 = 8,192 bits. 
+ * 
+ * Como la memoria se organiza y direcciona en bytes (donde 1 byte equivale a 8 bits), dividimos 
+ * el total de bits entre 8: 
+ * 8,192 bits / 8 = 1,024 bytes (exactamente 1 KB).
+ */
 #endif
